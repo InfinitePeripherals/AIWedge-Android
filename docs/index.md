@@ -114,17 +114,17 @@ Your app can receive the barcode data via intent, if you add the Intent Action t
     private var broadcastReceiver = object: BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
 
-            if (intent?.action == "com.ipc.qwedge.intent.ACTION") {
+            if (intent?.action == "com.ipc.aiwedge.intent.ACTION") {
                 val extras = intent!!.extras
                 if (extras == null) {
                     return
                 }
 
-                if (extras.containsKey("com.ipc.qwedge.intent.barcodeData")) {
-                    val barcodeData = extras.getString("com.ipc.qwedge.intent.barcodeData")
+                if (extras.containsKey("com.ipc.aiwedge.intent.barcodeData")) {
+                    val barcodeData = extras.getString("com.ipc.aiwedge.intent.barcodeData")
                     if (barcodeData != null) {
-                        if (extras.containsKey("com.ipc.qwedge.intent.barcodeType")) {
-                            val barcodeType = extras.getString("com.ipc.qwedge.intent.barcodeType")
+                        if (extras.containsKey("com.ipc.aiwedge.intent.barcodeType")) {
+                            val barcodeType = extras.getString("com.ipc.aiwedge.intent.barcodeType")
                             if (barcodeType != null) {
                                 // Do something with the barcodeData and barcodeType...
                                 // ...
