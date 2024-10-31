@@ -316,7 +316,7 @@ Your app can receive barcode data via intent by adding the intent action to your
 ### AIWedge Configuration
 AIWedge's configuration can be updated via Intent, MDM or QRCode. Below is a list of keys that can be configured:
 
-```Java
+```java
     /// The active package name to send the intent to
     const val packageName = "packageName"
 
