@@ -149,7 +149,7 @@ You can write the JavaScript script as normal with a few important rules. Below 
 
     **Note**: *The JavaScript **must** contains a function that has the same name as the file name. In this case, the function name is `ModifyTestBarcode`. AIWedge will only call this function.*
 
-    ```JavaScript
+    ```javascript
         // The content has a main function which will be called by AIWedge 
         function ModifyTestBarcode(symbology, barcode) 
         {
@@ -176,7 +176,7 @@ You can write the JavaScript script as normal with a few important rules. Below 
     
 3. The ModifyTestBarcode function must return an object with format as follow: 
 
-    ```JavaScript
+    ```javascript
         { 
             accept: Boolean, 
             adjBarcode: String,
@@ -286,7 +286,7 @@ The following are the default intent actions and extras that applications can re
 ### How To Receive The Scanned Barcode via Intent
 Your app can receive barcode data via intent by adding the intent action to your app’s intent filters. By default, the intent action is `com.ipc.aiwedge.intent.ACTION`. Once the intent is received, look for the barcode data extra, which is provided under the key `com.ipc.aiwedge.intent.barcodeData`, and barcode data type extra, which is the value of the key `com.ipc.aiwedge.intent.barcodeType`
 
-```Java
+```java
     private var broadcastReceiver = object: BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
 
@@ -408,7 +408,7 @@ AIWedge's configuration can be updated via Intent, MDM or QRCode. Below is a lis
 #### Send Configuration via Intent
 Below is an example to set configuration via Intent from another app:
 
-```Java
+```java
     // Create a bundle that contains config values.
     var config = Bundle()
     // Enable scan beep
@@ -438,7 +438,7 @@ Below is an example to set configuration via Intent from another app:
 #### Set Configuration via QRCode
 Configuration can be set by scanning a QRCode that contains the settings and their values. The QRCode must contains a JSON object with a root key named `AIWedgeBundle`:
 
-```Java
+```java
 {
     "AIWedgeBundle" : {
         "enableScanBeep" : true,
@@ -449,7 +449,7 @@ Configuration can be set by scanning a QRCode that contains the settings and the
 
 #### Trigger Barcode Scan via Command
 The barcode scanner engine can be triggered via intent API as below:
-```Java
+```java
     Intent().also { it ->
         // AIWedge action to receive command
         it.action = "com.ipc.aiwedge.api.ACTION"
