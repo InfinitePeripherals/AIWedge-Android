@@ -11,7 +11,7 @@ has_children: false
 AIWedge is a versatile Android app that captures barcode scans and images, transmitting them to target applications via keystrokes or intents. It allows users to configure settings, customize barcode processing through JavaScript, and manage the app through QR codes, intents, or mobile device management (MDM) solutions. Key features include a barcode service, multiple output modes (keyboard and intent), and advanced configuration options like MagicFilters for enhanced data handling.
 {: .fs-5 .fw-300 }
 
-Version 1.0.6 (Preview)
+Version 1.0.7
 {: .fs-5 .fw-300 }
 
 ---
@@ -37,6 +37,14 @@ Version 1.0.6 (Preview)
     </td>
   </tr>
 </table>
+
+## Install and Connect
+### Install AIWedge and Setup Linea Pro G (LPG)
+1. Download AIWedge (by Infinite Peripherals, Inc.) application from the Google Play Store here: https://play.google.com/store/apps/details?id=com.ipc.aiwedge
+2. Open AIWedge once installed, and allow all permissions so AIWedge can perform correctly.
+3. If the Pixel 8a device and the battery are installed on the LPG, wake up the LPG by pressing on any side buttons.
+4. A popup will display on first use: "Allow AIWedge to access LineaGoogle?", please make sure to check the box: "Always open AIWedge when LineaGoogle is connected", and then tap "OK"
+5. AIWedge should display the Linea Pro G connected, and its battery level. AIWedge is now ready to use.
 
 ## App Settings
 ### Device Information
@@ -351,11 +359,6 @@ AIWedge's configuration can be updated via Intent, MDM or QRCode. Below is a lis
     /// Enable or Disable overwrite the current content in the text field when a new barcode is scanned.
     /// Value is Boolean
     const val enableOverwriteCurrentText = "enableOverwriteCurrentText"
-
-    /// Enable or Disable keys suggestion on the AIWedge keyboard layout.
-    /// When a key on the keyboard held down for a brief moment, a popup will be shown with suggested keys around the key that being held down.
-    /// Value is Boolean
-    const val enableKeysSuggestion = "enableKeysSuggestion"
 
     /// Enable or Disable intent output mode. This mode should be ON in order to receive the barcode via intents.
     /// Value is Boolean
